@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Majid Weather App</h1>
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name">
+                <button>Search</button>
+            </div>
+            <button id="darkModeToggle">🌙 Dark Mode</button>
+            <button id="shareWeather">Share Weather</button>
+        </header>
+
+        <main id="weatherInfo" class="weather-info">
+            <section class="current-weather">
+                <h2 id="cityName">Loading...</h2>
+                <div class="temp-container">
+                    <span id="weatherEmoji"></span>
+                    <span id="temperature" class="temperature">--°</span>
+                    <span id="condition">--</span>
+                </div>
+                <div id="highLow">H:--° L:--°</div>
+                <div id="weatherDescription">Loading weather information...</div>
+                <div id="feelsLike">Feels like: --°</div>
+                <div id="humidity">Humidity: --%</div>
+                <div id="windSpeed">Wind: -- km/h</div>
+                <div id="pressure">Pressure: -- hPa</div>
+                <div id="dewPoint">Dew Point: --°C</div>
+                <div id="cloudCover">Cloud Cover: --%</div>
+            </section>
+
+            <section class="forecast-section">
+                <h3 id="hourly-forecast" class="forecast-title">Hourly Forecast</h3>
+                <div id="hourlyForecast" class="hourly-forecast"></div>
+            </section>
+
+            <section class="forecast-section">
+                <h3 id="day-forecast" class="forecast-title">5-Day Forecast</h3>
+                <div id="tenDayForecast" class="ten-day-forecast"></div>
+            </section>
+
+            <section class="air-quality">
+                <h3>Air Quality</h3>
+                <div id="airQualityStatus">--</div>
+                <div class="air-quality-bar">
+                    <div class="air-quality-level"></div>
+                </div>
+                <div id="airQualityDescription">Loading air quality information...</div>
+            </section>
+
+            <section id="weatherAlert" class="weather-alert">
+                <h3>Weather Alert</h3>
+                <p id="alertDescription">No current weather alerts.</p>
+                <p id="alertSource"></p>
+            </section>
+            
+          <section>
+            <div class="section additional-info">
+                <div class="info-item">
+                    <h4>UV Index</h4>
+                    <span id="uvIndex">--</span>
+                </div>
+                <div class="info-item">
+                    <h4>Sunrise</h4>
+                    <span id="sunrise">--:--</span>
+                </div>
+                <div class="info-item">
+                    <h4>Sunset</h4>
+                    <span id="sunset">--:--</span>
+                </div>
+                <div class="info-item">
+                    <h4>Precipitation</h4>
+                    <span id="precipitation">--%</span>
+                    <span id="precipitationType">Type: --</span>
+                </div>
+            </section>
+
+            <section class="chart-container">
+                <h3>24-Hour Temperature Forecast</h3>
+                <canvas id="weatherChart"></canvas>
+            </section>
+
+            <section class="map-container">
+                <h3>Weather Map</h3>
+                <div id="weatherMap" class="weather-map"></div>
+            </section>
+
+            <section class="chart-container">
+                <h3>Historical Weather</h3>
+                <canvas id="historicalWeatherChart"></canvas>
+            </section>
+
+            <section class="weather-impact">
+                <h3>Weather Impact</h3>
+                <p id="weatherImpact"></p>
+            </section>
+        </main>
+
+        <aside>
+            <h3>Saved Locations</h3>
+            <button id="saveLocationButton">Save Current Location</button>
+            <ul id="savedLocationsList"></ul>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>

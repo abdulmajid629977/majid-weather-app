@@ -1,0 +1,294 @@
+:root {
+  --primary-bg: #1e1e2e;
+  --secondary-bg: #2a2a3c;
+  --text-color: #ffffff;
+  --accent-color: #7f5af0;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --gradient-start: #2b2b3e;
+  --gradient-end: #1a1a2e;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.weather-info {
+  background-color: var(--secondary-bg);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.current-weather {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#cityName {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.temp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.temperature {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+#condition {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+#highLow, #weatherDescription, #feelsLike, #humidity, #windSpeed, #pressure {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.forecast-section {
+  margin-top: 30px;
+}
+
+.forecast-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.hourly-forecast, .ten-day-forecast {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 0;
+  gap: 15px;
+}
+
+.hourly-item, .forecast-item {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  min-width: 100px;
+}
+
+.hourly-item i, .forecast-item i {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.air-quality {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.air-quality-bar {
+  background-color: var(--card-bg);
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.air-quality-level {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.weather-alert {
+  background-color: rgba(255, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.additional-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.info-item {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+}
+
+.chart-container, .map-container {
+  margin-top: 30px;
+  background-color: var(--secondary-bg);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+#weatherMap {
+  height: 300px;
+  border-radius: 10px;
+}
+
+.weather-impact {
+  margin-top: 30px;
+  text-align: center;
+  font-style: italic;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#cityInput {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  width: 70%;
+  max-width: 300px;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: #6b4cc9;
+}
+
+#saveLocationButton {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#saveLocationButton:hover {
+  background-color: #6b4cc9;
+}
+
+#savedLocationsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+#savedLocationsList li {
+  background-color: var(--card-bg);
+  padding: 5px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#savedLocationsList li:hover {
+  background-color: var(--accent-color);
+}
+
+#darkModeToggle, #shareWeather {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#darkModeToggle:hover, #shareWeather:hover {
+  background-color: #6b4cc9;
+}
+
+#weatherEmoji {
+  font-size: 3rem;
+  margin-right: 10px;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  --primary-bg: #121212;
+  --secondary-bg: #1e1e1e;
+  --text-color: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --gradient-start: #1a1a1a;
+  --gradient-end: #2c2c2c;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .weather-info {
+      padding: 15px;
+  }
+
+  #cityName {
+      font-size: 2rem;
+  }
+
+  .temperature {
+      font-size: 3rem;
+  }
+
+  .hourly-forecast, .ten-day-forecast {
+      gap: 10px;
+  }
+
+  .hourly-item, .forecast-item {
+      min-width: 80px;
+      padding: 10px;
+  }
+
+  .additional-info {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#dewPoint, #cloudCover {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
